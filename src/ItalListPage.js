@@ -8,7 +8,7 @@ import function ItalListPage() {
 
     useEffect(() => {
         setFetchPending(true);
-        fetch("https://localhost:5130/Ital")
+        fetch("https://localhost:3000/italok")
         .then((response) =>response.json())
         .then((italok) => setItalok(italok))
         .catch(console.log)
@@ -23,7 +23,7 @@ import function ItalListPage() {
             ) : (
                 <div>
                     <h2>Italok</h2>
-                    {italok.map((film) => (
+                    {italok.map((ital) => (
 
                         <div className="card col-sm-3 d-inline-block m-1 p-2">
                             <p className="text-dark">Ital neve: {ital.nev}</p>
@@ -34,12 +34,12 @@ import function ItalListPage() {
                                     <img alt={ital.nev}
                                         className="img-fluid"
                                         style={{ maxHeight: 200 }}
-                                        src={ital.kepneve ? film.kepneve :
+                                        src={ital.kepneve ? ital.kepneve :
                                             "https://via.placeholder.com/400x800"} /></NavLink>
                                 <br />
-                                <NavLink key="y" to={"/mod-film/" + film.id}>
+                                <NavLink key="y" to={"/mod-ital/" + ital.id}>
                                     <i className="bi bi-pencil"></i></NavLink> &nbsp;&nbsp;
-                                    <NavLink key="x" to={"/del-film/" + film.id}><i className="bi bi-trash3"></i></NavLink>
+                                    <NavLink key="x" to={"/del-ital/" + ital.id}><i className="bi bi-trash3"></i></NavLink>
                             </div>
                         </div>
 

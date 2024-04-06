@@ -20,7 +20,7 @@ function App() {
               </NavLink>
               </li>
               <li className="nav-item">
-              <NavLink to={'/uj-pizza'} className={({isActive}) => "nav-link" + (isActive ? "active" : "")}>
+              <NavLink to={'/uj-ital'} className={({isActive}) => "nav-link" + (isActive ? "active" : "")}>
                 <span className="nav-link">Új ital</span>
               </NavLink>
               </li>
