@@ -1,7 +1,9 @@
 import React, {useState,useEffect} from "react";
 import { NavLink } from "react-router-dom";
 
-import ItalListPage = ()=> {
+
+const ItalListPage = () => {
+
     
     const [italok,setItalok] = useState([]);
     const [isFetchPending, setFetchPending] = useState(false);
