@@ -2,7 +2,7 @@ import React, {useState,useEffect} from "react";
 import { NavLink } from "react-router-dom";
 
 
-const ItalListPage = () => {
+export function ItalListPage() {
 
     
     const [italok,setItalok] = useState([]);
@@ -10,7 +10,7 @@ const ItalListPage = () => {
 
     useEffect(() => {
         setFetchPending(true);
-        fetch("https://localhost:3000/italok")
+        fetch("https://localhost:3000/Ital")
         .then((response) =>response.json())
         .then((italok) => setItalok(italok))
         .catch(console.log)
