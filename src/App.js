@@ -1,8 +1,13 @@
-import React, {BrowserRouter as Router, NavLink, Routes, Route} from 'react';
-import axios from 'axios';
+import React, {BrowserRouter as Router, NavLink, Route, Routes} from "react";
+import { ItalListPage } from "./ItalListPage";
+import { ItalSinglePage } from "./ItalSinglePage";
+import { ItalCreatePage } from "./ItalCreatePage";
+import { ItalModPage } from "./ItalModPage";
+import { ItalDelPage } from "./ItalDelPage";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { BrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
   return (
@@ -25,7 +30,7 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" exact element={<ItalListPage />} />
-        <Route path="/ital/:italmId" exact element={<ItaSinglePage />} />
+        <Route path="/ital/:italmId" exact element={<ItalSinglePage />} />
         <Route path="/uj-ital" exact element={<ItalCreatePage />} />
         <Route path="/mod-ital/:italId" exact element={<ItalModPage />} />
         <Route path="/del-ital/:italId" exact element={<ItalDelPage />} />
