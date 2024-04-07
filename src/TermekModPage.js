@@ -3,28 +3,31 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 export function TermekModPage(props) {
     const params = useParams();
-    const id = params.italId;
+    const id = params.termekId;
     const navigate = useNavigate();
-    const [ital,setItal] = useState([]);
+    const [termek,setTermek] = useState([]);
     const[modnev,setModnev] = useState('');
-    const[modkiadasEve,setModkiadasEve] = useState('');
-    const[modertekeles,setModertekeles] = useState('');
+    const[modar,setModAr] = useState('');
+    const[modleiras,setModLeiras] = useState('');
+    const[modkategoriak,setModKategoriak] = useState('');
     const[modkepneve,setModkepneve] = useState('');
 
     useEffect(() => {
         (async () => {
 
             try {
-                const res = await fetch(`https://localhost:5130/Ital/${id}`)
-                const ital = await res.json();
-                setItal(ital);
-                setModnev(ital.nev);
+                const res = await fetch(`https://localhost:5130/Termek/${id}`)
+                const termek = await res.json();
+                setTermek(termek);
+                setModnev(termek.nev);
                 console.log(modnev);
-                setModkiadasEve(ital.modkiadasEve);
-                console.log(modkiadasEve);
-                setModertekeles(ital.modertekeles);
-                console.log(modertekeles);
-                setModkepneve(ital.modkepneve);
+                setModAr(termek.modar);
+                console.log(modar);
+                setModLeiras(termek.modleiras);
+                console.log(modleiras);
+                setModKategoriak(termek.modkategoriak);
+                console.log(modkategoriak);
+                setModkepneve(termek.modkepneve);
                 console.log(modkepneve);
             }
             catch(error) {
@@ -32,16 +35,19 @@ export function TermekModPage(props) {
             }
         })
         (); 
-    }, [id,modnev,modkiadasEve,modertekeles,modkepneve,ital]);
+    }, [id,modnev,modar,modleiras,modkategoriak,modkepneve,termek]);
    
     const modNev = event => {
         setModnev(event.target.value);
     }
-    const modKiadasEve = event => {
-        setModkiadasEve(event.target.value);
+    const modAr = event => {
+        setModar(event.target.value);
     }
-    const modErtekeles = event => {
-        setModertekeles(event.target.value);
+    const modLeiras = event => {
+        setModleiras(event.target.value);
+    }
+    const modKategoriak = event => {
+        setModkategoriak(event.target.value);
     }
     const modKepneve = event => {
         setModkepneve(event.target.value);
@@ -49,12 +55,12 @@ export function TermekModPage(props) {
 
     return (
         <div className="p-5 content bg-whitesmoke text-center">
-            <h2>Egy film módosítása</h2>
+            <h2>Termék módosítása</h2>
             <form
             onSubmit={(event) => {
                 event.persist();
                 event.preventDefault();
-                fetch(`https://localhost:5130/Ital/${id}`, {
+                fetch(`https://localhost:5130/Termek/${id}`, {
                     method: "PUT",
                     headers: {
                         'Content-Type': 'application/json',
@@ -62,8 +68,9 @@ export function TermekModPage(props) {
                     body: JSON.stringify({
                         id: event.target.elements.id.value,
                         nev: event.target.elements.nev.value,
-                        kiadasEve: event.target.elements.kiadaseve.value,
-                        ertekeles: event.target.elements.ertekeles.value,
+                        ar: event.target.elements.ar.value,
+                        leiras: event.target.elements.leiras.value,
+                        kategoriak: event.target.elements.kategoriak.value,
                         kepneve: event.target.elements.kepneve.value,
                     }),
                 })
@@ -73,34 +80,40 @@ export function TermekModPage(props) {
                 .catch(console.log);
             }}>
                 <div className="form-group row pb-3">
-                    <label className="col-sm-3 col-form-label">Ital ID:</label>
+                    <label className="col-sm-3 col-form-label">Termék ID:</label>
                     <div className="col-sm-9">
-                        <input type="number" name="id" className="form-control" value={ital.id}/>
+                        <input type="number" name="id" className="form-control" value={termek.id}/>
                     </div>
                 </div>
                 <div className="form-group row pb-3">
-                    <label className="col-sm-3 col-form-label">Ital név:</label>
+                    <label className="col-sm-3 col-form-label">Termék név:</label>
                     <div className="col-sm-9">
-                        <input type="text" name="nev" className="form-control" defaultValue={ital.nev} onChange={modNev}/>
+                        <input type="text" name="nev" className="form-control" defaultValue={termek.nev} onChange={modNev}/>
                     </div>
                 </div>
                 <div className="form-group row pb-3">
-                    <label className="col-sm-3 col-form-label">Kiadás éve:</label>
+                    <label className="col-sm-3 col-form-label">Termékek ára:</label>
                     <div className="col-sm-9">
-                        <input type="number" name="kiadaseve" className="form-control" defaultValue={ital.kiadasEve} onChange={modKiadasEve}/>
+                        <input type="text" name="ar" className="form-control" defaultValue={termek.ar} onChange={modAr}/>
                     </div>
                 </div>
                 <div className="form-group row pb-3">
-                    <label className="col-sm-3 col-form-label">Értékelés:</label>
+                    <label className="col-sm-3 col-form-label">Termék leírása:</label>
                     <div className="col-sm-9">
-                        <input type="number" name="ertekeles" className="form-control" defaultValue={ital.ertekeles} onChange={modErtekeles}/>
+                        <input type="text" name="leiras" className="form-control" defaultValue={termek.leiras} onChange={modLeiras}/>
+                    </div>
+                </div>
+                <div className="form-group row pb-3">
+                    <label className="col-sm-3 col-form-label">Termék kategóriák:</label>
+                    <div className="col-sm-9">
+                        <input type="text" name="kategoriak" className="form-control" defaultValue={termek.kategoriak} onChange={modKategoriak}/>
                     </div>
                 </div>
                 <div className="form-group row pb-3">
                     <label className="col-sm-3 col-form-label">Kép URL-je:</label>
                     <div className="col-sm-9">
-                        <input type="text" name="kepneve" className="form-control" defaultValue={ital.kepneve} onChange={modKepneve}/>
-                    <img src={process.env.PUBLIC_URL + '/' + ital.kepneve} height="200px" alt={ital.nev}/>
+                        <input type="text" name="kepneve" className="form-control" defaultValue={termek.kepneve} onChange={modKepneve}/>
+                    <img src={process.env.PUBLIC_URL + '/' + termek.kepneve} height="200px" alt={termek.nev}/>
                     </div>
                 </div>
                 <button type="submit" className="btn btn-success">Küldés</button>
