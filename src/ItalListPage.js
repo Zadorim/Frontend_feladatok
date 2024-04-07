@@ -10,7 +10,7 @@ export function ItalListPage() {
 
     useEffect(() => {
         setFetchPending(true);
-        fetch("https://localhost:3000/Ital")
+        fetch("http://localhost:5130/Ital")
         .then((response) =>response.json())
         .then((italok) => setItalok(italok))
         .catch(console.log)

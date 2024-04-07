@@ -1,9 +1,9 @@
 import React, {BrowserRouter as Router, NavLink, Route, Routes} from "react";
-import { ItalListPage } from "./ItalListPage";
-import { ItalSinglePage } from "./ItalSinglePage";
-import { ItalCreatePage } from "./ItalCreatePage";
-import { ItalModPage } from "./ItalModPage";
-import { ItalDelPage } from "./ItalDelPage";
+import { TermekListPage } from "./TermekListPage";
+import { TermekSinglePage } from "./TermekSinglePage";
+import { TermekCreatePage } from "./TermekCreatePage";
+import { TermekModPage } from "./TermekModPage";
+import { TermekDelPage } from "./TermekDelPage";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -28,11 +28,11 @@ function App() {
         </div>
       </nav>
       <Routes>
-        <Route path="/" exact element={<ItalListPage />} />
-        <Route path="/ital/:italmId" exact element={<ItalSinglePage />} />
-        <Route path="/uj-ital" exact element={<ItalCreatePage />} />
-        <Route path="/mod-ital/:italId" exact element={<ItalModPage />} />
-        <Route path="/del-ital/:italId" exact element={<ItalDelPage />} />
+        <Route path="/" exact element={<TermekListPage />} />
+        <Route path="/ital/:italmId" exact element={<TermekSinglePage />} />
+        <Route path="/uj-ital" exact element={<TermekCreatePage />} />
+        <Route path="/mod-ital/:italId" exact element={<TermekModPage />} />
+        <Route path="/del-ital/:italId" exact element={<TermekDelPage />} />
       </Routes>
     </Router>
   );
