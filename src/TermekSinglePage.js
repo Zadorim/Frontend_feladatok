@@ -32,7 +32,7 @@ export function TermekSinglePage(props) {
                             <div className="card p-3">
                                 <div className="card-body">
                                 <h5 className="card-title">Termék neve: {termek.nev}</h5>
-                                <div className="lead">Termék ára:: {termek.ar}</div>
+                                <div className="lead">Termék ára: {termek.ar}</div>
                                 <div className="lead">Termék leírása: {termek.leiras}</div>
                                 <div className="lead">Termék kategóriák: {termek.kategoriak}</div>                                
                                     <img alt={termek.nev}
@@ -44,8 +44,7 @@ export function TermekSinglePage(props) {
                                   </div>
                                   <div><NavLink to="/"><i class="bi bi-backspace"></i></NavLink> &nbsp;&nbsp;&nbsp;
 <NavLink key="y" to={"/mod-ital/" + termek.id}><i class="bi bi-pencil"></i></NavLink></div>   
-                            </div>
-                        
+                            </div>                        
                     )}
                 </div>
             );

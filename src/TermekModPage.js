@@ -55,7 +55,7 @@ export function TermekModPage(props) {
 
     return (
         <div className="p-5 content bg-whitesmoke text-center">
-            <h2>Termék módosítása</h2>
+            <h2>Termék keresése</h2>
             <form
             onSubmit={(event) => {
                 event.persist();
@@ -120,5 +120,5 @@ export function TermekModPage(props) {
             </form>
         </div>
     );
-    }
+}
 export default TermekModPage;
