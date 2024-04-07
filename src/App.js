@@ -16,12 +16,12 @@ function App() {
           <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink to={'/'} className={({isActive}) => "nav-link" + (isActive ? "active" : "")}>
-                <span className="nav-link">Ital választó</span>
+                <span className="nav-link">Termékek keresése</span>
               </NavLink>
               </li>
               <li className="nav-item">
               <NavLink to={'/uj-ital'} className={({isActive}) => "nav-link" + (isActive ? "active" : "")}>
-                <span className="nav-link">Új ital</span>
+                <span className="nav-link">Új termék</span>
               </NavLink>
               </li>
           </ul>

@@ -12,7 +12,7 @@ export function TermekListPage() {
         setFetchPending(true);
         fetch("http://localhost:5130/Termek")
         .then((response) =>response.json())
-        .then((termekek) => setItalok(termekek))
+        .then((termekek) => setTermekek(termekek))
         .catch(console.log)
         .finally(() => {
             setFetchPending(false);
