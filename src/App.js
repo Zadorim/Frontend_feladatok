@@ -1,4 +1,4 @@
-import React, {BrowserRouter as Router, NavLink, Route, Routes} from "react";
+import { BrowserRouter as Router, NavLink, Routes, Route } from "react-router-dom";
 import { TermekListPage } from "./TermekListPage";
 import { TermekSinglePage } from "./TermekSinglePage";
 import { TermekCreatePage } from "./TermekCreatePage";

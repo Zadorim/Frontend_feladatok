@@ -28,10 +28,10 @@ export function TermekListPage() {
                     {termekek.map((termek) => (
 
                         <div className="card col-sm-3 d-inline-block m-1 p-2">
-                            <p className="text-dark">Termék neve: {termek.nev}</p>
-                            <p className="text-danger">Termék ára: {termek.ar}</p>
-                            <p className="text-danger">Termék leírása: {termek.leiras}</p> 
-                            <p className="text-danger">Termék kategóriák: {termek.kategoriak}</p>                           
+                            <p className="text-dark"> {termek.nev}</p>
+                            <p className="text-danger"> {termek.ar}</p>
+                            <p className="text-danger">{termek.leiras}</p> 
+                            <p className="text-danger"> {termek.kategoriak}</p>                           
                             <div className="card-body">
                                 <NavLink key={termek.id} to={"/termek/" + termek.id}>
                                     <img alt={termek.nev}
@@ -45,8 +45,6 @@ export function TermekListPage() {
                                     <NavLink key="x" to={"/del-termek/" + termek.id}><i className="bi bi-trash3"></i></NavLink>
                             </div>
                         </div>
-
-
                     ))}
                 </div>
             )}
