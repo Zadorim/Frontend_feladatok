@@ -20,7 +20,7 @@ function App() {
               </NavLink>
               </li>
               <li className="nav-item">
-              <NavLink to={'/uj-ital'} className={({isActive}) => "nav-link" + (isActive ? "active" : "")}>
+              <NavLink to={'/uj-termek'} className={({isActive}) => "nav-link" + (isActive ? "active" : "")}>
                 <span className="nav-link">Új termék</span>
               </NavLink>
               </li>
@@ -29,10 +29,10 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" exact element={<TermekListPage />} />
-        <Route path="/ital/:italmId" exact element={<TermekSinglePage />} />
-        <Route path="/uj-ital" exact element={<TermekCreatePage />} />
-        <Route path="/mod-ital/:italId" exact element={<TermekModPage />} />
-        <Route path="/del-ital/:italId" exact element={<TermekDelPage />} />
+        <Route path="/termek/:termekId" exact element={<TermekSinglePage />} />
+        <Route path="/uj-termek" exact element={<TermekCreatePage />} />
+        <Route path="/mod-termek/:termekId" exact element={<TermekModPage />} />
+        <Route path="/del-termek/:termekId" exact element={<TermekDelPage />} />
       </Routes>
     </Router>
   );

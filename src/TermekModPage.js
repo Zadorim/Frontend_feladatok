@@ -10,7 +10,7 @@ export function TermekModPage(props) {
     const[modar,setModAr] = useState('');
     const[modleiras,setModLeiras] = useState('');
     const[modkategoriak,setModKategoriak] = useState('');
-    const[modkepneve,setModkepneve] = useState('');
+    const[modkepneve,setModKepneve] = useState('');
 
     useEffect(() => {
         (async () => {
@@ -27,7 +27,7 @@ export function TermekModPage(props) {
                 console.log(modleiras);
                 setModKategoriak(termek.modkategoriak);
                 console.log(modkategoriak);
-                setModkepneve(termek.modkepneve);
+                setModKepneve(termek.modkepneve);
                 console.log(modkepneve);
             }
             catch(error) {
@@ -41,16 +41,16 @@ export function TermekModPage(props) {
         setModnev(event.target.value);
     }
     const modAr = event => {
-        setModar(event.target.value);
+        setModAr(event.target.value);
     }
     const modLeiras = event => {
-        setModleiras(event.target.value);
+        setModLeiras(event.target.value);
     }
     const modKategoriak = event => {
-        setModkategoriak(event.target.value);
+        setModKategoriak(event.target.value);
     }
     const modKepneve = event => {
-        setModkepneve(event.target.value);
+        setModKepneve(event.target.value);
     }
 
     return (
