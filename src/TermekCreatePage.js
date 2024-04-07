@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export function ItalCreatePage(){
+export function TermekCreatePage(){
     const navigate = useNavigate();
     return (
         <div className="p-5 content bg-whitesmoke text-center">
@@ -9,7 +9,7 @@ export function ItalCreatePage(){
             onSubmit={(event) => {                
             event.persist();
             event.preventDefault();
-            fetch(`https://localhost:3000/Ital`, {
+            fetch(`https://localhost:5130/Ital`, {
                 method: "POST",                
                 headers: {
                     'Content-Type': 'application/json',
@@ -61,4 +61,4 @@ export function ItalCreatePage(){
         </div>
     );
 }
-export default ItalCreatePage;
+export default TermekCreatePage;

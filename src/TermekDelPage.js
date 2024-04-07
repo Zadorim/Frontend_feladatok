@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, NavLink } from 'react-router-dom';
 
-export function ItalDelPage(props) {
+export function TermekDelPage(props) {
     const params = useParams();
     const id = params.italId;
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ export function ItalDelPage(props) {
         setPending(true);
         (async () => {
             try {
-        const res= await fetch(`https://localhost:3000/Ital/${id}`)
+        const res= await fetch(`https://localhost:5130/Ital/${id}`)
             const ital = await res.json();
             setItal(ital);
         }
@@ -44,7 +44,7 @@ export function ItalDelPage(props) {
                               <form onSubmit={(event) => {                
             event.persist();
             event.preventDefault();
-            fetch(`https://localhost:3000/Ital/${id}`, {
+            fetch(`https://localhost:5130/Ital/${id}`, {
                 method: "DELETE",                                
             })            
             .then(() =>
@@ -64,4 +64,4 @@ export function ItalDelPage(props) {
         );
 }
 
-    export default ItalDelPage;
+    export default TermekDelPage;

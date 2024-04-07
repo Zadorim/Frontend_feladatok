@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-export function ItalModPage(props) {
+export function TermekModPage(props) {
     const params = useParams();
     const id = params.italId;
     const navigate = useNavigate();
@@ -15,7 +15,7 @@ export function ItalModPage(props) {
         (async () => {
 
             try {
-                const res = await fetch(`https://localhost:3000/Ital/${id}`)
+                const res = await fetch(`https://localhost:5130/Ital/${id}`)
                 const ital = await res.json();
                 setItal(ital);
                 setModnev(ital.nev);
@@ -54,7 +54,7 @@ export function ItalModPage(props) {
             onSubmit={(event) => {
                 event.persist();
                 event.preventDefault();
-                fetch(`https://localhost:3000/Ital/${id}`, {
+                fetch(`https://localhost:5130/Ital/${id}`, {
                     method: "PUT",
                     headers: {
                         'Content-Type': 'application/json',
@@ -108,4 +108,4 @@ export function ItalModPage(props) {
         </div>
     );
     }
-export default ItalModPage;
+export default TermekModPage;
