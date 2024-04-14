@@ -11,7 +11,7 @@ export function TermekSinglePage(props) {
         setPending(true);        
         (async () => {
             try {                
-        const res= await fetch(`https://localhost:5130/Termek/${id}`)
+        const res= await fetch(`http://localhost:5130/Termek/${id}`)
             const termek = await res.json();
             setTermek(termek);
         }

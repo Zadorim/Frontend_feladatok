@@ -10,7 +10,7 @@ export function TermekListPage() {
 
     useEffect(() => {
         setFetchPending(true);
-        fetch("http://localhost:5130/Termek")
+        fetch(`http://localhost:5130/Termek`)
         .then((response) =>response.json())
         .then((termekek) => setTermekek(termekek))
         .catch(console.log)

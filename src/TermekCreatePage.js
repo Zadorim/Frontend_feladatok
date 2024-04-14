@@ -9,7 +9,7 @@ export function TermekCreatePage(){
             onSubmit={(event) => {                
             event.persist();
             event.preventDefault();
-            fetch(`https://localhost:5130/Termek`, {
+            fetch(`http://localhost:5130/Termek`, {
                 method: "POST",                
                 headers: {
                     'Content-Type': 'application/json',

@@ -16,7 +16,7 @@ export function TermekModPage(props) {
         (async () => {
 
             try {
-                const res = await fetch(`https://localhost:5130/Termek/${id}`)
+                const res = await fetch(`http://localhost:5130/Termek/${id}`)
                 const termek = await res.json();
                 setTermek(termek);
                 setModnev(termek.nev);
@@ -60,7 +60,7 @@ export function TermekModPage(props) {
             onSubmit={(event) => {
                 event.persist();
                 event.preventDefault();
-                fetch(`https://localhost:5130/Termek/${id}`, {
+                fetch(`http://localhost:5130/Termek/${id}`, {
                     method: "PUT",
                     headers: {
                         'Content-Type': 'application/json',
