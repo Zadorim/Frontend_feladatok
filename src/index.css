@@ -1,11 +1,13 @@
 body {
-  background-image: url('/public/image/uvegek2.jpg');
   height: 100vh;
   font-weight: 100;
   margin: 10px;
+  padding: 0%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgb(2,0,36);
+  background: linear-gradient(rgba(2,0,36,1) 0%, rgba(238,192,18,1) 42%, rgba(0,212,255,1) 100%);
 }
 
 .login-container {
@@ -13,7 +15,7 @@ body {
   padding: 20px;
   border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  text-align: auto;
 }
 
 input {
@@ -24,7 +26,7 @@ input {
 }
 
 button {
-  background-color: #393f81;
+  background-color: #39813f;
   color: #fff;
   padding: 10px;
   border: none;
@@ -34,5 +36,5 @@ button {
 }
 
 button:hover {
-  background-color: #2b2f5c;
+  background-color: #0b3619;
 }
