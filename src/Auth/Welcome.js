@@ -9,7 +9,7 @@ function Welcome() {
         <p>Sikeresen bejelentkeztél vagy regisztráltál az oldalra.</p>
         <p>Folytatáshoz válassz az alábbi lehetőségek közül:</p>
         <ul>
-          <li><a href="http://localhost:5130/Termek">Termékvásárlás</a></li>
+          <li><a href="http://localhost:5130/Termek">Termékek keresése</a></li>
           <li>Profil szerkesztése</li>
           <li>Kijelentkezés</li>
         </ul>
