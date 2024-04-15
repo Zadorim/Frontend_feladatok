@@ -38,3 +38,22 @@ button {
 button:hover {
   background-color: #0b3619;
 }
+.card {
+  text-align: center;
+  background-image: url('path/to/your/image.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background: rgb(2, 0, 36);
+  background: linear-gradient(rgba(2, 0, 36, 1) 0%, rgba(238, 192, 18, 1) 42%, rgba(0, 212, 255, 1) 100%); 
+  width: 300px;
+  height: 400px;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card-text {
+  text-align: center;
+}
