@@ -1,12 +1,15 @@
 import { BrowserRouter as Router, NavLink, Routes, Route } from "react-router-dom";
-import { TermekListPage } from "./TermekListPage";
-import { TermekSinglePage } from "./TermekSinglePage";
-import { TermekCreatePage } from "./TermekCreatePage";
-import { TermekModPage } from "./TermekModPage";
-import { TermekDelPage } from "./TermekDelPage";
+import { TermekListPage } from "./Termekek/TermekListPage";
+import { TermekSinglePage } from "./Termekek/TermekSinglePage";
+import { TermekCreatePage } from "./Termekek/TermekCreatePage";
+import { TermekModPage } from "./Termekek/TermekModPage";
+import { TermekDelPage } from "./Termekek/TermekDelPage";
+import {Login}   from "./Auth/Login";
+import {Register} from "./Auth/Register";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 function App() {
   return (
