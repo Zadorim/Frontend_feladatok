@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function Register() {
   const [fullName, setFullName] = useState('');
@@ -10,7 +10,7 @@ function Register() {
     e.preventDefault();
     try {
       const userData = {fullName, email,password};
-      const response = await fetch ('https://localhost:5130/Termek', {
+      const response = await fetch (`https://localhost:5130/Termek`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -22,7 +22,7 @@ function Register() {
         throw new Error(data.message || 'Hiba történt a regisztráció során.');
       }
 
-      // Sikeres regisztráció esetén további műveletek végrehajtása (pl. navigáció)
+      
     } catch (error) {
       setRegistrationError(error.message);
     }

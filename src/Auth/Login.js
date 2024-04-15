@@ -12,7 +12,7 @@ function Login() {
       if (!userName|| !password) {
         throw new Error('Kérlek, add meg mindkét mezőt!');
       }      
-      const response = await fetch('http://localhost:5130/Termek', {
+      const response = await fetch(`http://localhost:5130`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +39,8 @@ function Login() {
         <button type="submit">Bejelentkezés</button>
       </form>
     </div>
-  );
+  );  
+
 }
 
 export default Login;

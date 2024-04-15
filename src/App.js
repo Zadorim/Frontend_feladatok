@@ -4,8 +4,9 @@ import { TermekSinglePage } from "./Termekek/TermekSinglePage";
 import { TermekCreatePage } from "./Termekek/TermekCreatePage";
 import { TermekModPage } from "./Termekek/TermekModPage";
 import { TermekDelPage } from "./Termekek/TermekDelPage";
-import {Login}   from "./Auth/Login";
-import {Register} from "./Auth/Register";
+import Login from "./Auth/Login";
+import Register from "./Auth/Register";
+import Welcome from "./Auth/Welcome"
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -32,6 +33,9 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" exact element={<TermekListPage />} />
+        <Route path="/login" exact element={<Login/>}/>
+        <Route path="/register" exact element={<Register/>}/>
+        <Route path="/welcome" exact element={<Welcome/>}/>
         <Route path="/termek/:termekId" exact element={<TermekSinglePage />} />
         <Route path="/uj-termek" exact element={<TermekCreatePage />} />
         <Route path="/mod-termek/:termekId" exact element={<TermekModPage />} />
