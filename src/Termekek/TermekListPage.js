@@ -1,12 +1,13 @@
 import React, {useState,useEffect} from "react";
-import { NavLink } from "react-router-dom";
+import { useHistory,NavLink } from "react-router-dom";
+
 
 
 export function TermekListPage() {
-
     
     const [termekek,setTermekek] = useState([]);
     const [isFetchPending, setFetchPending] = useState(false);
+    const history = useHistory();
 
     useEffect(() => {
         setFetchPending(true);
@@ -16,6 +17,7 @@ export function TermekListPage() {
         .catch(console.log)
         .finally(() => {
             setFetchPending(false);
+            history.push("/");
         });
     }, []);
     return (

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-icons/font/bootstrap-icons.json'
+import 'bootstrap-icons/font/bootstrap-icons.json';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
